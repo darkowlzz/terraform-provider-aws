@@ -39,7 +39,7 @@ func TestAccAWSDBInstance_basic(t *testing.T) {
 					resource.TestCheckResourceAttr(
 						"aws_db_instance.bar", "license_model", "general-public-license"),
 					resource.TestCheckResourceAttr(
-						"aws_db_instance.bar", "instance_class", "db.t1.micro"),
+						"aws_db_instance.bar", "instance_class", "db.t2.micro"),
 					resource.TestCheckResourceAttr(
 						"aws_db_instance.bar", "name", "baz"),
 					resource.TestCheckResourceAttr(
@@ -671,7 +671,7 @@ resource "aws_db_instance" "bar" {
 	allocated_storage = 10
 	engine = "MySQL"
 	engine_version = "5.6.35"
-	instance_class = "db.t1.micro"
+	instance_class = "db.t2.micro"
 	name = "baz"
 	password = "barbarbarbar"
 	username = "foo"
@@ -697,7 +697,7 @@ resource "aws_db_instance" "test" {
 	allocated_storage = 10
 	engine = "MySQL"
 	identifier_prefix = "tf-test-"
-	instance_class = "db.t1.micro"
+	instance_class = "db.t2.micro"
 	password = "password"
 	username = "root"
 	publicly_accessible = true
@@ -712,7 +712,7 @@ const testAccAWSDBInstanceConfig_generatedName = `
 resource "aws_db_instance" "test" {
 	allocated_storage = 10
 	engine = "MySQL"
-	instance_class = "db.t1.micro"
+	instance_class = "db.t2.micro"
 	password = "password"
 	username = "root"
 	publicly_accessible = true
@@ -823,7 +823,7 @@ func testAccReplicaInstanceConfig(val int) string {
 		allocated_storage = 5
 		engine = "mysql"
 		engine_version = "5.6.35"
-		instance_class = "db.t1.micro"
+		instance_class = "db.t2.micro"
 		name = "baz"
 		password = "barbarbarbar"
 		username = "foo"
@@ -863,7 +863,7 @@ resource "aws_db_instance" "snapshot" {
 	allocated_storage = 5
 	engine = "mysql"
 	engine_version = "5.6.35"
-	instance_class = "db.t1.micro"
+	instance_class = "db.t2.micro"
 	name = "baz"
 	password = "barbarbarbar"
 	username = "foo"
@@ -890,7 +890,7 @@ resource "aws_db_instance" "snapshot" {
 	allocated_storage = 5
 	engine = "mysql"
 	engine_version = "5.6.35"
-	instance_class = "db.t1.micro"
+	instance_class = "db.t2.micro"
 	name = "baz"
 	password = "barbarbarbar"
 	publicly_accessible = true
@@ -1306,7 +1306,7 @@ resource "aws_db_instance" "bar" {
 	allocated_storage = 10
 	engine = "MySQL"
 	engine_version = "5.6"
-	instance_class = "db.t1.micro"
+	instance_class = "db.t2.micro"
 	name = "baz"
 	password = "barbarbarbar"
 	username = "foo"
@@ -1320,7 +1320,7 @@ resource "aws_db_instance" "bar" {
   identifier = "foobarbaz-test-terraform-%d"
 	allocated_storage = 10
 	engine = "MySQL"
-	instance_class = "db.t1.micro"
+	instance_class = "db.t2.micro"
 	name = "baz"
 	password = "barbarbarbar"
 	username = "foo"
